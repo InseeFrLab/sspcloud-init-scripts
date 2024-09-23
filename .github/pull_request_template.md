@@ -12,8 +12,9 @@
 
 ## Checklist
 
-- [ ] Descriptive title
-- [ ] I have commented my code where necessary
+- [ ] I made sure the header of the script describe what the it does 
+- [ ] I precised parameters if needed
+- [ ] I commented my code where necessary
 
 ## Additional Notes
 
