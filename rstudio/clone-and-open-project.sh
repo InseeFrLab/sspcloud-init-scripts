@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#Expected parameters : None
+
 # This init script clones a Git repository that contains a RStudio project (*.Rproj)
 # and opens it in RStudio at startup
 
