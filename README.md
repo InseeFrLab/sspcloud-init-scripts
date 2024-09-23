@@ -17,7 +17,21 @@ Welcome to the Initialization Scripts Repository for the Onyxia platform! This r
 ## Contributing 
 
 Contributions are welcome, feel free to submit pull requests 😊 
-Please, make sure the code is well documented.
+Please, make sure the code is well documented and respect the following template: 
+
+```
+#!/bin/sh
+
+# Expected parameters : 
+# Indicate None if parameters are not needed, else :
+#   - parameter1 : brief description
+#   - parameter2 : brief description
+
+
+# This init script is used for .... 
+# You should describe the aim of the script
+
+```
 
 ## Contact
 

@@ -12,7 +12,8 @@
 
 ## Checklist
 
-- [ ] I made sure the header of the script describe what the it does 
+- [ ] I respected the template displayed in the contributing sequence of the README 
+- [ ] I made sure the header of the script describes what the it does 
 - [ ] I precised parameters if needed
 - [ ] I commented my code where necessary
 
