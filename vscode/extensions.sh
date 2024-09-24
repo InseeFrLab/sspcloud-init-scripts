@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # CONFORT EXTENSIONS -----------------
 
 code-server --install-extension oderwat.indent-rainbow
