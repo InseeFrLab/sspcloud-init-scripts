@@ -1,9 +1,8 @@
 #!/bin/sh
 
-#Expected parameters : None
-
 # This init script clones a Git repository that contains a RStudio project (*.Rproj)
 # and opens it in RStudio at startup
+# Expected parameters : None
 
 REPO_URL=https://github.com/avouacr/learnr-onyxia.git
 WORK_DIR=/home/onyxia/work
