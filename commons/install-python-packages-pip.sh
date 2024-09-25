@@ -11,4 +11,4 @@ git clone --depth 1 https://github.com/${GIT_USER}/${GIT_REPO}.git
 chown -R onyxia:users ${GIT_REPO}/
 
 # Install Python packages
-pip install -r ${GIT_REPO}/requirements.txt
+pip install -r ${GIT_REPO}/examples/requirements.txt
