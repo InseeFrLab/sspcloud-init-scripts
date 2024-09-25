@@ -1,0 +1,47 @@
+---
+title: "Simple Example"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: 
+  html_document: 
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+# Load necessary libraries
+library(ggplot2)
+```
+
+## Introduction
+
+This is a simple example using the built-in `mtcars` dataset in R. We will perform basic operations on the dataset and create a plot with `ggplot2`.
+
+## Basic Operations
+
+Let's start by taking a quick look at the `mtcars` dataset.
+
+```{r}
+# Print the first few rows of the dataset
+head(mtcars)
+```
+
+Now let's perform a basic summary of the dataset.
+
+```{r}
+# Summary statistics of the dataset
+summary(mtcars)
+```
+
+## Creating a Simple Plot
+
+We will now create a scatter plot using the `mpg` (miles per gallon) and `hp` (horsepower) variables from the `mtcars` dataset.
+
+```{r}
+# Create a scatter plot of mpg vs hp
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  geom_point() +
+  labs(title = "Scatter Plot of Horsepower vs. MPG",
+       x = "Horsepower",
+       y = "Miles Per Gallon (MPG)") +
+  theme_minimal()
+```

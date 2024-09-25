@@ -12,6 +12,7 @@ chown -R onyxia:users ${GIT_REPO}/
 # Open the project
 WORK_DIR='/home/onyxia/work'
 PROJECT_DIR=${WORK_DIR}/${GIT_REPO}/examples
+FILE_TO_OPEN=${PROJECT_DIR}/report.qmd
 echo \
 "
 setHook('rstudio.sessionInit', function(newSession) {
@@ -19,6 +20,7 @@ setHook('rstudio.sessionInit', function(newSession) {
   {
     message('Activation du projet RStudio')
     rstudioapi::openProject('${PROJECT_DIR}')
+    rstudioapi::navigateToFile('${FILE_TO_OPEN}')
   }
 }, action = 'append')
 " >> /home/onyxia/.Rprofile
