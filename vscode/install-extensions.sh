@@ -12,6 +12,27 @@ code-server --install-extension yzhang.markdown-all-in-one
 # Integrates Excalidraw (software for sketching diagrams)
 code-server --install-extension pomdtr.excalidraw-editor
 
+# ADD CUSTOM EXTENSIONS FROM ARGS ----
+
+# Check if no arguments are provided
+if [ "$#" -ge 1 ]; then
+  # Loop over all the provided arguments (extensions)
+  for extension in "$@"
+  do
+      echo "Installing extension: $extension"
+      
+      # Install the extension using code-server
+      code-server --install-extension "$extension"
+      
+      # Check if the installation was successful
+      if [ $? -eq 0 ]; then
+          echo "Successfully installed $extension"
+      else
+          echo "Failed to install $extension"
+      fi
+  done
+fi
+
 # COPILOT ----------------------------
 
 # Install Copilot (Microsoft's AI-assisted code writing tool)
