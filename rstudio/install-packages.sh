@@ -13,12 +13,13 @@ Rscript -e "install.packages('remotes')"
 
 # Install from a `DESCRIPTION` file that specifies project dependencies
 # See https://r-pkgs.org/description.html for more info
-Rscript -e "remotes::install_deps('examples')"
+PROJECT_DIR="${GIT_REPO}/examples"
+Rscript -e "remotes::install_deps('${PROJECT_DIR}', upgrade='never')"
 
 # Install from a `renv` lockfile
 # See https://rstudio.github.io/renv/articles/renv.html for more info
 Rscript -e "install.packages('renv')"
-Rscript -e "renv::restore('examples')"
+Rscript -e "renv::restore('${PROJECT_DIR}', upgrade='never')"
 
 # Install from 
 # See https://remotes.r-lib.org/reference/install_github.html for more info

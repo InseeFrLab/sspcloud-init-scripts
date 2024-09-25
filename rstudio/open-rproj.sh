@@ -4,22 +4,21 @@
 # and opens it in RStudio at startup
 # Expected parameters : None
 
-REPO_URL=https://github.com/avouacr/learnr-onyxia.git
-WORK_DIR=/home/onyxia/work
-TUTO_DIR=${WORK_DIR}/tutoriel
-
-# Clone repository and give permissions to the onyxia user 
-git clone $REPO_URL $TUTO_DIR
-chown -R onyxia:users $TUTO_DIR
+# Clone repository and give permissions to the onyxia user
+GIT_REPO=sspcloud-init-scripts
+git clone --depth 1 https://github.com/InseeFrLab/${GIT_REPO}.git
+chown -R onyxia:users ${GIT_REPO}/
 
 # Open the project
+WORK_DIR='/home/onyxia/work'
+PROJECT_DIR=${WORK_DIR}/${GIT_REPO}/examples
 echo \
 "
 setHook('rstudio.sessionInit', function(newSession) {
   if (newSession && identical(getwd(), '${WORK_DIR}'))
   {
     message('Activation du projet RStudio')
-    rstudioapi::openProject('${TUTO_DIR}')
+    rstudioapi::openProject('${PROJECT_DIR}')
   }
 }, action = 'append')
 " >> /home/onyxia/.Rprofile
