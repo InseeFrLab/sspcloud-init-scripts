@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # This init script install VScode extensions provided as args
-# Only the extensions from the Open VSX Registry can be installed on code-server
+# NB : only extensions from the Open VSX Registry (https://open-vsx.org/) can be installed on code-server
 # Expected parameters : a space separated list of extensions
 
 # Check if no arguments are provided
