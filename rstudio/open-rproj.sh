@@ -10,7 +10,7 @@ git clone --depth 1 https://github.com/InseeFrLab/${GIT_REPO}.git
 chown -R onyxia:users ${GIT_REPO}/
 
 # Open the project
-PROJECT_DIR=${WORKSPACE_DIR}/${GIT_REPO}/examples
+PROJECT_DIR=${WORKSPACE_DIR}/${GIT_REPO}/inputs
 echo \
 "
 setHook('rstudio.sessionInit', function(newSession) {

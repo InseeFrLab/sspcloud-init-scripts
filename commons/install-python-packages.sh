@@ -10,4 +10,4 @@ git clone --depth 1 https://github.com/InseeFrLab/${GIT_REPO}.git
 chown -R onyxia:users ${GIT_REPO}/
 
 # Install Python packages
-pip install -r ${GIT_REPO}/examples/requirements.txt
+pip install -r ${GIT_REPO}/inputs/requirements.txt

@@ -13,7 +13,7 @@ Rscript -e "install.packages('remotes')"
 
 # Install from a `DESCRIPTION` file that specifies project dependencies
 # See https://r-pkgs.org/description.html for more info
-PROJECT_DIR="${GIT_REPO}/examples"
+PROJECT_DIR="${GIT_REPO}/inputs"
 Rscript -e "remotes::install_deps('${PROJECT_DIR}')"
 
 # Install from a `renv` lockfile

@@ -14,4 +14,4 @@ REQUIREMENTS_FILE=${GIT_REPO}/requirements.txt
 [ -f $REQUIREMENTS_FILE ] && pip install -r $REQUIREMENTS_FILE
 
 # Open the relevant notebook when starting Jupyter Lab
-echo "c.LabApp.default_url = '/lab/tree/${GIT_REPO}/examples/tutorial.ipynb'" >> /home/onyxia/.jupyter/jupyter_server_config.py
+echo "c.LabApp.default_url = '/lab/tree/${GIT_REPO}/inputs/tutorial.ipynb'" >> /home/onyxia/.jupyter/jupyter_server_config.py
