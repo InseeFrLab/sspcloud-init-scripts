@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # This init script install various useful VScode extensions
+# Only the extensions from the Open VSX Registry can be installed on code-server
 # Expected parameters : None
 
 # CONFORT EXTENSIONS -----------------
