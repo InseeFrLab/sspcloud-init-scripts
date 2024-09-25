@@ -22,6 +22,9 @@ copilotChat="0.13.0"
 wget --retry-on-http-error=429 "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub/vsextensions/copilot/${copilotVersion}/vspackage" -O copilot.vsix.gz
 wget --retry-on-http-error=429 https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub/vsextensions/copilot-chat/${copilotChat}/vspackage -O copilot-chat.vsix.gz
 
+gzip -d copilot.vsix.gz 
+gzip -d copilot-chat.vsix.gz 
+
 code-server --install-extension copilot.vsix
 code-server --install-extension copilot-chat.vsix
 rm copilot.vsix copilot-chat.vsix
