@@ -4,7 +4,7 @@
 # Expected parameters : None
 
 # Path to the VSCode settings.json file
-SETTINGS_FILE="$HOME/.config/Code/User/settings.json"
+SETTINGS_FILE="$HOME/.local/share/code-server/User/settings.json"
 
 # Check if the settings.json file exists, otherwise create a new one
 if [ ! -f "$SETTINGS_FILE" ]; then
