@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # This init script updates settings of VSCode. Many example of options are displayed.
+# See here for the default settings enforced in Onyxia's VSCode-based images : https://github.com/InseeFrLab/images-datascience/blob/main/vscode/settings/User.json 
 # Expected parameters : None
 
 # Path to the VSCode settings.json file
@@ -24,16 +25,5 @@ jq '. + {
 
     "flake8.args": [
         "--max-line-length=100"  # Max line length for Python linting
-    ],
-
-    "cSpell.language": "en,fr",  # Languages for spell check
-    # Exceptions on file extensions for spell check
-    "cSpell.enableFiletypes": [  
-        "!jupyter",
-        "!python",
-        "!r",
-        "!json",
-        "!yaml"
     ]
 }' "$SETTINGS_FILE" > "$SETTINGS_FILE.tmp" && mv "$SETTINGS_FILE.tmp" "$SETTINGS_FILE"
-
