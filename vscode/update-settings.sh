@@ -4,7 +4,7 @@
 # Expected parameters : None
 
 # Path to the VSCode settings.json file
-SETTINGS_FILE="$HOME/.local/share/code-server/User/settings.json"
+SETTINGS_FILE="${HOME}/.local/share/code-server/User/settings.json"
 
 # Check if the settings.json file exists, otherwise create a new one
 if [ ! -f "$SETTINGS_FILE" ]; then
@@ -16,31 +16,24 @@ fi
 # Add or modify Python-related settings using jq
 # We will keep the comments outside the jq block, as jq doesn't support comments inside JSON.
 jq '. + {
-    "workbench.colorTheme": "Default Dark Modern"   # Set the theme
-    "python.linting.enabled": true,                 # Enable linting in Python files
-    "python.linting.pylintEnabled": true,           # Enable Pylint for linting
-    "python.linting.flake8Enabled": true,           # Enable Flake8 for additional linting
-    "python.linting.mypyEnabled": true,             # Enable MyPy for static type checking
+    "workbench.colorTheme": "Default Dark Modern",  # Set the theme
 
-    "python.formatting.provider": "black",          # Use Black as the code formatter
-    "python.formatting.blackArgs": ["--line-length", "88"],  # Additional arguments for Black
+    "editor.rulers": [80, 100, 120],  # Add specific vertical rulers
+    "files.trimTrailingWhitespace": true,  # Automatically trim trailing whitespace
+    "files.insertFinalNewline": true,  # Ensure files end with a newline
 
-    "python.testing.pytestEnabled": true,           # Enable Pytest for running tests
+    "flake8.args": [
+        "--max-line-length=100"  # Max line length for Python linting
+    ],
 
-    "python.analysis.typeCheckingMode": "basic",    # Set the type checking mode to "basic"
-    "python.analysis.autoSearchPaths": true,        # Enable automatic search for imports
-    "python.analysis.useLibraryCodeForTypes": true, # Use types provided by libraries
-
-    "editor.formatOnSave": true,                    # Automatically format code when saving
-    "editor.tabSize": 4,                            # Set tab size to 4 spaces
-    "editor.insertSpaces": true,                    # Convert tabs to spaces
-    "editor.rulers": [80],                          # Add a ruler at 80 characters
-    "files.trimTrailingWhitespace": true,           # Automatically trim trailing whitespace
-    "files.insertFinalNewline": true,               # Ensure files end with a newline
-
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": true              # Automatically organize imports on save
-    }
+    "cSpell.language": "en,fr",  # Languages for spell check
+    # Exceptions on file extensions for spell check
+    "cSpell.enableFiletypes": [  
+        "!jupyter",
+        "!python",
+        "!r",
+        "!json",
+        "!yaml"
+    ]
 }' "$SETTINGS_FILE" > "$SETTINGS_FILE.tmp" && mv "$SETTINGS_FILE.tmp" "$SETTINGS_FILE"
-
 
