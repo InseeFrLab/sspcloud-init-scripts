@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This init script upate settings of vscode. Many example of options are displayed.
+# This init script updates settings of VSCode. Many example of options are displayed.
 # Expected parameters : None
 
 # Path to the VSCode settings.json file
