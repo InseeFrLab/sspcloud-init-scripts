@@ -3,6 +3,8 @@
 # This init script updates settings of Rsudio. Various examples of options are displayed.
 # Expected parameters : None
 
+touch ~/.Rprofile
+
 # Set a theme and displays the console on the right
 echo \
 "
@@ -17,7 +19,7 @@ setHook('rstudio.sessionInit', function(newSession) {
 }, action = 'append')
 
 # Set CRAN mirror
-options(repos = c(CRAN = 'https://cran.rstudio.org'))
+# options(repos = c(CRAN = 'https://cran.rstudio.org'))
 
 # Customize console prompt, digit display, and continuation prompt
 options(
@@ -25,4 +27,4 @@ options(
   digits = 4,          # Limit numeric precision to 4 digits
   continue = '+++ '    # Continuation prompt
 )
-" >> /home/onyxia/.Rprofile
+" >> ~/.Rprofile
