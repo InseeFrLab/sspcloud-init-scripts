@@ -28,4 +28,8 @@ gzip -d copilot-chat.vsix.gz
 
 code-server --install-extension copilot.vsix
 code-server --install-extension copilot-chat.vsix
+
+# A setting that needs to be disabled in order to make word tab completion
+sed -i 's/}/  "chat.extensionUnification.enabled": false\n}/' ~/.local/share/code-server/User/settings.json
+
 rm copilot.vsix copilot-chat.vsix
