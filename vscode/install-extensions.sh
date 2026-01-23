@@ -16,8 +16,9 @@ code-server --install-extension pomdtr.excalidraw-editor
 # COPILOT ----------------------------
 
 # Install Copilot (Microsoft's AI-assisted code writing tool)
-copilotVersion="1.234.0"
-copilotChatVersion="0.20.0" # This version is not compatible with VSCode server 1.92.2
+# Compatible versions with code-server v4.108.1
+copilotChatVersion="0.31.1"
+copilotVersion="1.388.0"
 
 wget --retry-on-http-error=429 https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub/vsextensions/copilot/${copilotVersion}/vspackage -O copilot.vsix.gz
 wget --retry-on-http-error=429 https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub/vsextensions/copilot-chat/${copilotChatVersion}/vspackage -O copilot-chat.vsix.gz
