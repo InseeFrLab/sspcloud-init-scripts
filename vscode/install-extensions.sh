@@ -29,7 +29,46 @@ gzip -d copilot-chat.vsix.gz
 code-server --install-extension copilot.vsix
 code-server --install-extension copilot-chat.vsix
 
-# A setting that needs to be disabled in order to make word tab completion
-sed -i 's/}/  "chat.extensionUnification.enabled": false\n}/' ~/.local/share/code-server/User/settings.json
+# Force those settings to make completions work
+cat << 'EOF' > ~/.local/share/code-server/User/settings.json
+{
+  "security.workspace.trust.enabled": false,
+  "security.workspace.trust.startupPrompt": "never",
+  "terminal.integrated.inheritEnv": false,
+  "git.defaultCloneDirectory": "~/work",
+  "python.testing.pytestEnabled": true,
+  "flake8.args": [
+    "--max-line-length=100"
+  ],
+  "redhat.telemetry.enabled": false,
+  "julia.symbolCacheDownload": true,
+  "julia.enableTelemetry": false,
+  "r.bracketedPaste": true,
+  "cSpell.language": "en,fr",
+  "cSpell.enableFiletypes": [
+    "!jupyter",
+    "!python",
+    "!r",
+    "!json",
+    "!yaml"
+  ],
+  "[latex]": {
+    "editor.wordWrap": "on"
+  },
+  "chat.disableAIFeatures": false,
+  "workbench.colorTheme": "Default Dark Modern",
+  "yaml.schemas": {
+    "file:///home/onyxia/.local/share/code-server/extensions/continue.continue-1.3.29-linux-x64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "chat.extensionUnification.enabled": false,
+  "github.copilot.enable": {
+    "quarto": false,
+    "*": true
+  }
+}
+EOF
 
 rm copilot.vsix copilot-chat.vsix
